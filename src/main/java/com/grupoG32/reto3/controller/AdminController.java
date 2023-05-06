@@ -1,6 +1,6 @@
 package com.grupoG32.reto3.controller;
 
-
+import com.grupoG32.reto3.dbo.AdminDbo;
 import com.grupoG32.reto3.model.AdminModel;
 import com.grupoG32.reto3.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +16,11 @@ public class AdminController {
     AdminService adminService;
 
     @GetMapping("/all")
-    public List<AdminModel> obtenerAdministradores(){
-        return adminService.obtenerAdministradores();
-    }
+    public List<AdminModel> obtenerAdministradores(){ return adminService.obtenerAdministradores();}
 
     @PostMapping("/save")
-    public String crearAdministradores(@RequestBody AdminModel adminModel){
-        return adminService.crearAdministradores(adminModel);
+    public String crearAdministradores(@RequestBody AdminDbo adminDbo){
+        return null;
+        // return adminService.crearAdministradores(adminDbo);
     }
 }

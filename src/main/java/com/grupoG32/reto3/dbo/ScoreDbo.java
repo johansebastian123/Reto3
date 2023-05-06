@@ -12,5 +12,6 @@ import javax.persistence.*;
 public class ScoreDbo {
     private  int idScore;
     private  float value;
+    private ReservationModel reservation;
 
 }

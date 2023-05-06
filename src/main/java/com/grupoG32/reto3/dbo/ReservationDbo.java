@@ -15,4 +15,6 @@ import java.util.Date;
 public class ReservationDbo {
     private Date startDate;
     private Date devolutionDate;
+    private CarModel car;
+    private ClientModel client;
 }

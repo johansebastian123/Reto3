@@ -15,4 +15,6 @@ public class MessageDbo {
 
     private  int idMessage;
     private  String messageText;
+    private CarModel car;
+    private ClientModel client;
 }
