@@ -1,9 +1,10 @@
 package com.grupoG32.reto3.controller;
 
 
-import com.grupoG32.reto3.dbo.CarDbo;
 import com.grupoG32.reto3.model.CarModel;
+import com.grupoG32.reto3.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,14 +17,13 @@ public class CarController {
     CarService carService;
 
     @GetMapping("/all")
-    public List<CarModel> obtenerCarros(){
-        return null;
-        //return carService.obtenerCarros();
+    public List<CarModel> obtener(){
+        return carService.obtener();
     }
 
     @PostMapping("/save")
-    public String crearCarros(@RequestBody CarDbo car){
-        return null;
-        //return carService.crearCarros(carModel);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void crear(@RequestBody CarModel car){
+        carService.crear(car);
     }
 }

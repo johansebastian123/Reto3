@@ -23,11 +23,13 @@ public class ReservationModel {
     @Column(name = "devolution_date")
     private Date devolutionDate;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    private String status = "created";
+
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_car", nullable = false)
     private CarModel car;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_client", nullable = false)
     private ClientModel client;
 }

@@ -1,10 +1,9 @@
 package com.grupoG32.reto3.controller;
 
-
-import com.grupoG32.reto3.dbo.ReservationDbo;
 import com.grupoG32.reto3.model.ReservationModel;
 import com.grupoG32.reto3.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,14 +16,13 @@ public class ReservationController {
     ReservationService reservationService;
 
     @GetMapping("/all")
-    public List<ReservationModel> obtenerReservaciones(){
-        return null;
-        //return reservationService.obtenerReservaciones();
+    public List<ReservationModel> obtener(){
+        return reservationService.obtener();
     }
 
     @PostMapping("/save")
-    public String crearReservaciones(@RequestBody ReservationDbo reservation){
-        return null;
-        //return reservationService.crearReservaciones(reservationModel);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void crearReservaciones(@RequestBody ReservationModel reservation){
+        reservationService.crear(reservation);
     }
 }

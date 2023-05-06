@@ -5,6 +5,7 @@ import com.grupoG32.reto3.dbo.MessageDbo;
 import com.grupoG32.reto3.model.MessageModel;
 import com.grupoG32.reto3.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,14 +18,13 @@ public class MessageController {
     MessageService messageService;
 
     @GetMapping("/all")
-    public List<MessageModel> obtenerMensajes(){
-        return null;
-        //return messageService.obtenerMensajes();
+    public List<MessageModel> obtener(){
+        return messageService.obtener();
     }
 
     @PostMapping("/save")
-    public String crearMensajes(@RequestBody MessageDbo message){
-        return null;
-        //return messageService.crearMensajes(messageModel);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void crear(@RequestBody MessageModel message){
+        messageService.crear(message);
     }
 }

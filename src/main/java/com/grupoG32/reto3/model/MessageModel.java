@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.swing.*;
 
 @Entity
 @Table(name = "Message")
@@ -17,14 +18,15 @@ public class MessageModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_message")
     private  int idMessage;
-    @Column(length = 45)
+    @Column(name = "message_text",length = 250)
     private  String messageText;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_car", nullable = false)
     private CarModel car;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_client", nullable = false)
     private ClientModel client;
+
 }

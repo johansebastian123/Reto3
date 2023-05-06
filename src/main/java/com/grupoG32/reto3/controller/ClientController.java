@@ -1,10 +1,9 @@
 package com.grupoG32.reto3.controller;
 
-
-import com.grupoG32.reto3.dbo.ClientDbo;
 import com.grupoG32.reto3.model.ClientModel;
 import com.grupoG32.reto3.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,14 +16,13 @@ public class ClientController {
     ClientService clientService;
 
     @GetMapping("/all")
-    public List<ClientModel> obtenerClientes(){
-        return null;
-        //return clientService.obtenerClientes();
+    public List<ClientModel> obtener(){
+        return clientService.obtener();
     }
 
     @PostMapping("/save")
-    public String crearClientes(@RequestBody ClientDbo client){
-        return null;
-        //return clientService.crearClientes(clientModel);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void crear(@RequestBody ClientModel client){
+        clientService.crear(client);
     }
 }
