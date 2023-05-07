@@ -1,5 +1,6 @@
 package com.grupoG32.reto3.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,9 +28,10 @@ public class ClientModel {
     @Column(length = 3)
     private  byte age;
 
-    @OneToMany(cascade = CascadeType.MERGE)
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "client")
+    @JsonIgnoreProperties({"messages"})
     private List<MessageModel> messages;
 
-    @OneToMany(cascade = CascadeType.MERGE)
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "client")
     private List<ReservationModel> reservations;
 }
