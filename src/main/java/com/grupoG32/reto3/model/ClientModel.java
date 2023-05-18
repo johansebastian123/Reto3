@@ -18,7 +18,7 @@ public class ClientModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_client")
-    private  int idClient;
+    private  Integer idClient;
     @Column(length = 45)
     private  String email;
     @Column(length = 45)
@@ -26,7 +26,7 @@ public class ClientModel {
     @Column(length = 250)
     private  String name;
     @Column(length = 3)
-    private  byte age;
+    private Byte age;
 
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "client")
     @JsonIgnoreProperties({"messages"})

@@ -1,5 +1,6 @@
 package com.grupoG32.reto3.controller;
 
+import com.grupoG32.reto3.model.ClientModel;
 import com.grupoG32.reto3.model.ReservationModel;
 import com.grupoG32.reto3.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,14 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.CREATED)
     public void crearReservaciones(@RequestBody ReservationModel reservation){
         reservationService.crear(reservation);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable int id){
+        reservationService.eliminar(id);
+    }
+    @PutMapping("/update")
+    public void actualizar(@RequestBody ReservationModel reservationInput){
+        reservationService.actualizar(reservationInput);
     }
 }

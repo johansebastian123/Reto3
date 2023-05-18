@@ -2,6 +2,7 @@ package com.grupoG32.reto3.controller;
 
 
 import com.grupoG32.reto3.dbo.MessageDbo;
+import com.grupoG32.reto3.model.ClientModel;
 import com.grupoG32.reto3.model.MessageModel;
 import com.grupoG32.reto3.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,15 @@ public class MessageController {
     @ResponseStatus(HttpStatus.CREATED)
     public void crear(@RequestBody MessageModel message){
         messageService.crear(message);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable int id){
+        messageService.eliminar(id);
+    }
+
+    @PutMapping("/update")
+    public void actualizar(@RequestBody MessageModel messageInput){
+        messageService.actualizar(messageInput);
     }
 }

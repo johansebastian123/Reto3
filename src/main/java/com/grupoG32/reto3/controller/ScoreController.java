@@ -1,6 +1,7 @@
 package com.grupoG32.reto3.controller;
 
 
+import com.grupoG32.reto3.model.ClientModel;
 import com.grupoG32.reto3.model.ScoreModel;
 import com.grupoG32.reto3.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,14 @@ public class ScoreController {
     @ResponseStatus(HttpStatus.CREATED)
     public void crear(@RequestBody ScoreModel score){
         scoreService.crear(score);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable int id){
+        scoreService.eliminar(id);
+    }
+    @PutMapping("/update")
+    public void actualizar(@RequestBody ScoreModel scoreInput){
+        scoreService.actualizar(scoreInput);
     }
 }

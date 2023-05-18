@@ -1,5 +1,6 @@
 package com.grupoG32.reto3.controller;
 
+import com.grupoG32.reto3.model.ClientModel;
 import com.grupoG32.reto3.model.GamaModel;
 import com.grupoG32.reto3.service.GamaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,4 +26,15 @@ public class GamaController {
     public void crear(@RequestBody GamaModel gama){
         gamaService.crear(gama);
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable int id){
+        gamaService.eliminar(id);
+    }
+    @PutMapping("/update")
+    public void actualizar(@RequestBody GamaModel gamaInput){
+        gamaService.actualizar(gamaInput);
+    }
 }
+
+
