@@ -1,6 +1,7 @@
 package com.grupoG32.reto3.controller;
 
 
+import com.grupoG32.reto3.dbo.ScoreDbo;
 import com.grupoG32.reto3.model.ClientModel;
 import com.grupoG32.reto3.model.ScoreModel;
 import com.grupoG32.reto3.service.ScoreService;
@@ -33,7 +34,7 @@ public class ScoreController {
         scoreService.eliminar(id);
     }
     @PutMapping("/update")
-    public void actualizar(@RequestBody ScoreModel scoreInput){
+    public void actualizar(@RequestBody ScoreDbo scoreInput){
         scoreService.actualizar(scoreInput);
     }
 }

@@ -1,5 +1,6 @@
 package com.grupoG32.reto3.controller;
 
+import com.grupoG32.reto3.dbo.GamaDbo;
 import com.grupoG32.reto3.model.ClientModel;
 import com.grupoG32.reto3.model.GamaModel;
 import com.grupoG32.reto3.service.GamaService;
@@ -32,7 +33,7 @@ public class GamaController {
         gamaService.eliminar(id);
     }
     @PutMapping("/update")
-    public void actualizar(@RequestBody GamaModel gamaInput){
+    public void actualizar(@RequestBody GamaDbo gamaInput){
         gamaService.actualizar(gamaInput);
     }
 }

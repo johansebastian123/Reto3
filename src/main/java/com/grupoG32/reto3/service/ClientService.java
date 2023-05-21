@@ -1,5 +1,6 @@
 package com.grupoG32.reto3.service;
 
+import com.grupoG32.reto3.dbo.ClientDbo;
 import com.grupoG32.reto3.model.ClientModel;
 import com.grupoG32.reto3.repoditory.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class ClientService {
         clientRepository.deleteById(id);
     }
 
-    public void actualizar(ClientModel clientInput) {
+    public void actualizar(ClientDbo clientInput) {
         Optional<ClientModel> clientDb = clientRepository.findById(clientInput.getIdClient());
                 if(clientDb.isPresent()){
                     ClientModel client = clientDb.get();

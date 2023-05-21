@@ -1,5 +1,6 @@
 package com.grupoG32.reto3.controller;
 
+import com.grupoG32.reto3.dbo.ReservationDbo;
 import com.grupoG32.reto3.model.ClientModel;
 import com.grupoG32.reto3.model.ReservationModel;
 import com.grupoG32.reto3.service.ReservationService;
@@ -32,7 +33,7 @@ public class ReservationController {
         reservationService.eliminar(id);
     }
     @PutMapping("/update")
-    public void actualizar(@RequestBody ReservationModel reservationInput){
+    public void actualizar(@RequestBody ReservationDbo reservationInput){
         reservationService.actualizar(reservationInput);
     }
 }

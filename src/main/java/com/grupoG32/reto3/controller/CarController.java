@@ -1,6 +1,7 @@
 package com.grupoG32.reto3.controller;
 
 
+import com.grupoG32.reto3.dbo.CarDbo;
 import com.grupoG32.reto3.model.CarModel;
 import com.grupoG32.reto3.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class CarController {
     }
 
     @PutMapping("/update")
-    public void actualizar(@RequestBody CarModel carInput){
+    public void actualizar(@RequestBody CarDbo carInput){
         carService.actualizar(carInput);
     }
 

@@ -1,5 +1,6 @@
 package com.grupoG32.reto3.service;
 
+import com.grupoG32.reto3.dbo.GamaDbo;
 import com.grupoG32.reto3.model.GamaModel;
 import com.grupoG32.reto3.repoditory.GamaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class GamaService {
         gamaRepository.deleteById(id);
     }
 
-    public void actualizar(GamaModel gamaInput) {
+    public void actualizar(GamaDbo gamaInput) {
         Optional<GamaModel> gamaDb = gamaRepository.findById(gamaInput.getIdGama());
         if (gamaDb.isPresent()){
             GamaModel gama = gamaDb.get();

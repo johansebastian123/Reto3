@@ -11,8 +11,8 @@
 	<groupId>com.grupoG32</groupId>
 	<artifactId>reto3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>reto3</name>
-	<description>Este es el proyecto del reto3</description>
+	<name>reto4</name>
+	<description>Este es el proyecto del reto4</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
