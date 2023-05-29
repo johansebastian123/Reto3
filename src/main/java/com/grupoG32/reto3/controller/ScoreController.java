@@ -10,9 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Score")
+@CrossOrigin(value = "*")
 public class ScoreController {
 
     @Autowired
@@ -21,6 +23,11 @@ public class ScoreController {
     @GetMapping("/all")
     public List<ScoreModel> obtener(){
         return scoreService.obtener();
+    }
+
+    @GetMapping("/{id}")
+    Optional<ScoreModel> obtenerPorId(@PathVariable int id) {
+        return scoreService.obtenerPorId(id);
     }
 
     @PostMapping("/save")

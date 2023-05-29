@@ -53,4 +53,8 @@ public class CarService {
            }
 
     }
+
+    public Optional<CarModel> obtenerPorId(int id) {
+        return carRepository.findById(id);
+    }
 }

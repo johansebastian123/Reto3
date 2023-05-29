@@ -9,9 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Reservation")
+@CrossOrigin(value = "*")
 public class ReservationController {
 
     @Autowired
@@ -20,6 +22,11 @@ public class ReservationController {
     @GetMapping("/all")
     public List<ReservationModel> obtener(){
         return reservationService.obtener();
+    }
+
+    @GetMapping("/{id}")
+    Optional<ReservationModel> obtenerPorId(@PathVariable int id) {
+        return reservationService.obtenerPorId(id);
     }
 
     @PostMapping("/save")

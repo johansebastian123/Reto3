@@ -42,4 +42,8 @@ public class MessageService {
             messageRepository.save(message);
         }
     }
+
+    public Optional<MessageModel> obtenerPorId(int id) {
+        return messageRepository.findById(id);
+    }
 }

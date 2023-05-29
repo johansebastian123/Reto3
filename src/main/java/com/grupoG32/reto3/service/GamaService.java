@@ -42,4 +42,8 @@ public class GamaService {
             gamaRepository.save(gama);
         }
     }
+
+    public Optional<GamaModel> obtenerPorId(int id) {
+        return gamaRepository.findById(id);
+    }
 }
