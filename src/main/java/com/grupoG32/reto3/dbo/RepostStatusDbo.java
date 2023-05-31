@@ -1,2 +1,13 @@
-package com.grupoG32.reto3.dbo;public class RepostStatusDbo {
+package com.grupoG32.reto3.dbo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class RepostStatusDbo {
+    private Integer completed;
+    private Integer cancelled;
 }
